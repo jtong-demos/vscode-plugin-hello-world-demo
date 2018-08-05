@@ -12,7 +12,8 @@
     ],
     "activationEvents": [
         "onCommand:extension.sayHello",
-        "onCommand:extension.sayWhatYouSelected"
+        "onCommand:extension.sayWhatYouSelected",
+        "onCommand:extension.sayYourExtensions"
     ],
     "main": "./extension",
     "contributes": {
@@ -24,6 +25,10 @@
             {
                 "command": "extension.sayWhatYouSelected",
                 "title": "You Secleted..."
+            },
+            {
+                "command": "extension.sayYourExtensions",
+                "title": "Your Extensions are..."
             }
 
         ]

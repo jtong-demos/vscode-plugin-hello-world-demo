@@ -37,6 +37,25 @@ function activate(context) {
 
     context.subscriptions.push(disposable);
 
+
+    disposable = vscode.commands.registerCommand('extension.sayYourExtensions', function () {
+        let allExtensions = vscode.extensions.all;
+        ;
+
+        // Display a message box to the user
+        vscode.window.showInformationMessage('You extensions are: ' + allExtensions.map(extension => extension.id).join(","));
+        if (allExtensions.find(extension => extension.id === "xyz.local-history")){
+            vscode.window.showInformationMessage('You installed needed extensions.');
+        }else{
+            vscode.window.showInformationMessage('You did not installed needed extensions.');
+
+        }
+        
+    });
+
+    context.subscriptions.push(disposable);
+
+
     
 
 }
